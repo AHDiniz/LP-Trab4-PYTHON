@@ -17,11 +17,9 @@ def read_files(points_loc, dist_loc):
 
     # Opening the points file:
     points_file = open(points_loc)
-    assert(points_file != None)
 
     # Opening the distance file:
     dist_file = open(dist_loc)
-    assert(dist_file != None)
 
     # Reading the distance file
     dist = float(dist_file.read())
@@ -45,4 +43,21 @@ def read_files(points_loc, dist_loc):
 #
 # Inputs: the sse value and the list of groups
 def print_results(sse, groups):
+
+    # Opening/Creating the sse file:
+    result = open("result.txt", "w+")
+
+    # Opening/Creating the groups file:
+    exitFile = open("saida.txt", "w+")
+
+    # Writing the sse in result.txt:
+    sseStr = "%.4f\n" % (sse)
+    result.write(sseStr)
+
+    for group in groups:
+        for index in group:
+            exitFile.write(str(index))
+            exitFile.write(" ")
+        exitFile.write("\n")
+
     return

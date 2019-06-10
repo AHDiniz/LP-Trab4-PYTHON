@@ -18,3 +18,5 @@ else: # Avoiding null filepaths
     dist_file = sys.argv[2]
 
 points, dist = reader.read_files(points_file, dist_file)
+
+reader.print_results(10.3123123, [[10, 10], [10, 10]])
