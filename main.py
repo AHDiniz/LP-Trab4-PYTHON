@@ -8,6 +8,7 @@
 
 import sys
 import reader
+import leader
 
 # Getting the command line arguments with the input filepaths:
 if (len(sys.argv) == 1):
@@ -17,6 +18,11 @@ else: # Avoiding null filepaths
     points_file = sys.argv[1]
     dist_file = sys.argv[2]
 
+# Reading the input files:
 points, dist = reader.read_files(points_file, dist_file)
 
-reader.print_results(10.3123123, [[10, 10], [10, 10]])
+# Calculating the algorithm results:
+sse, groups = leader.calculate_results(dist, points)
+
+# Printing the algorithm results:
+reader.print_results(sse, groups)
