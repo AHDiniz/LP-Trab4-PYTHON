@@ -58,6 +58,6 @@ def print_results(sse, groups):
         for index in group:
             exitFile.write(str(index))
             exitFile.write(" ")
-        exitFile.write("\n")
+        exitFile.write("\n\n")
 
     return
