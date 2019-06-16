@@ -29,10 +29,10 @@ def read_files(points_loc, dist_loc):
 
     # Creating the points list:
     points = []
-    for i in range(0, len(lines) - 1):
+    for i in range(0, len(lines)):
         words = lines[i].strip().split()
         points.append([])
-        for j in range(0, len(words) - 1):
+        for j in range(0, len(words)):
             points[i].append(float(words[j]))
 
     return points, dist

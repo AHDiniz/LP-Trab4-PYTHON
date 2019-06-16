@@ -18,7 +18,7 @@ import math
 def calculate_results(limit, points):
     groups = [[1]] # Creating the first group
 
-    for i in range(len(points) - 1): # Iterating through each point in the list
+    for i in range(len(points)): # Iterating through each point in the list
 
         leader = True
 
@@ -33,7 +33,8 @@ def calculate_results(limit, points):
         if leader:
             groups.append([i + 1])
 
-    return calculate_sse(points, groups), groups
+    sse = calculate_sse(points, groups)
+    return sse, groups
 
 
 
@@ -63,7 +64,7 @@ def calculate_sse(points, groups):
 def point_distance(a, b):
     d = 0
 
-    for i in range(len(a) - 1):
+    for i in range(len(a)):
         d += (a[i] - b[i]) ** 2
 
     return math.sqrt(d)
@@ -77,7 +78,7 @@ def point_distance(a, b):
 # Output: the center of mass of the group
 def center_of_mass(points, group):
     center = []
-    length = len(points[0]) - 1
+    length = len(points[0])
 
     for i in range(length):
         center.append(0)
